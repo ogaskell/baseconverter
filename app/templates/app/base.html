@@ -3,25 +3,21 @@
 <!DOCTYPE html>
 
 <html>
-
     <head>
-
         <title>Base Converter | By Oliver Gaskell</title>
         <link rel="shortcut icon" href="{% static 'favicon.ico' %}">
         <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
-
     </head>
 
     <body>
-
         <div class="headerbar">
             <img src="{% static 'logo.png' %}">
             <h3 class="headertitle">Base converter</h3>
         </div>
 
-        {% block content %}
-        {% endblock %}
-
+        <div class="content">
+            {% block content %}
+            {% endblock %}
+        </div>
     </body>
-
 </html>
