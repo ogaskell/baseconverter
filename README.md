@@ -1,2 +1,2 @@
 # baseconverter
-A project for my CS course.
+A basic base conversion site, written in Python and Django. 
