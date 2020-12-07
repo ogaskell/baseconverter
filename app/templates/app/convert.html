@@ -2,7 +2,13 @@
 
 {% block content %}
 
-<h2>Conversion:</h2>
+<h2>Result: </h2>
+<p>Input: {{input}}, Base {{inbase}}</p>
+<p>Result: {{result}}, Base {{resultbase}}</p>
+
+<hr>
+
+<h2>Convert another:</h2>
 
 <form class="converter" action="/convert" method="post">
     {% csrf_token %}
