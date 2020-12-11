@@ -1,0 +1,61 @@
+{% extends "app/base.html" %}
+
+{% block content %}
+
+<h1>Current supported conversions:</h1>
+<h3>More will be added soon</h3>
+
+<table border class="supported">
+    <tr>
+        <td colspan="2" rowspan="3"></td>
+        <th colspan="9">Source Base</th>
+    </tr>
+    <tr>
+        <th colspan="3">Binary</th>
+        <th colspan="3">Decimal</th>
+        <th colspan="3">Hexadecimal</th>
+    </tr>
+    <tr>
+        <th>Unsigned<br>Integer</th>
+        <th>Signed<br>Integer</th>
+        <th>Signed<br>Float</th>
+        <th>Unsigned<br>Integer</th>
+        <th>Signed<br>Integer</th>
+        <th>Signed<br>Float</th>
+        <th>Unsigned<br>Integer</th>
+        <th>Signed<br>Integer</th>
+        <th>Signed<br>Float</th>
+    </tr>
+    <tr>
+        <th rowspan="3">Target Base</th>
+        <th>Hexadecimal</th>
+
+        <td colspan="3">{{check}}</td>
+        <td>{{check}}</td>
+        <td>{{cross}}</td>
+        <td>{{cross}}</td>
+        <td colspan="3" class="grey"></td>
+    </tr>
+    <tr>
+        <th>Decimal</th>
+
+        <td>{{check}}</td>
+        <td>{{cross}}</td>
+        <td>{{cross}}</td>
+        <td colspan="3" class="grey"></td>
+        <td>{{check}}</td>
+        <td>{{cross}}</td>
+        <td>{{cross}}</td>
+    </tr>
+    <tr>
+        <th>Binary</th>
+
+        <td colspan="3" class="grey"></td>
+        <td>{{check}}</td>
+        <td>{{cross}}</td>
+        <td>{{cross}}</td>
+        <td colspan="3">{{check}}</td>
+    </tr>
+</table>
+
+{% endblock %}

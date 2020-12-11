@@ -71,3 +71,20 @@ input[type="checkbox"] {
     grid-area: hr;
     width: 100%;
 }
+
+.supported, .supported * {
+    border-collapse: collapse;
+}
+
+.supported tr th,td {
+    text-align: center;
+    padding: 5px;
+}
+
+.supported tr td {
+    font-size: 2em;
+}
+
+.grey {
+    background-color: lightgrey;
+}

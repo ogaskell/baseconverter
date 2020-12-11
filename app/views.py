@@ -13,6 +13,11 @@ def index(request):
     return render(request, 'app/index.html', {})
 
 
+def supported(request):
+    """Page listing which conversions are currently supported"""
+    return render(request, 'app/supported.html', {"check": "✅", "cross": "❌"})
+
+
 def convert(request):
     """Page to convert numbers."""
     if request.method == "GET":
