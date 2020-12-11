@@ -16,6 +16,7 @@ hex: Hexadecimal, Base 16
 
 
 def ui_dec_to_ui_bin(n, bits=0):
+    n = int(n)
     if n < 0:
         raise ValueError("Negative number " + str(n) + " cannot be converted to unsigned binary")
     elif n % 1 != 0:
