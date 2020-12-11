@@ -46,8 +46,11 @@ def tf_dec_to_tf_bin(n):
 
 
 def ui_bin_to_ui_dec(n):
+    n = n.replace(" ", "")
     if n.lstrip("-") != n:
         raise ValueError("Negative symbols are not supported in binary")
+    elif str(n).replace("1", "").replace("0", "") != "":
+        raise ValueError("Binary cannot contain characters other than 1, 0 and whitespace")
     else:
         d = int(n, 2)
 
