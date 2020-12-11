@@ -12,6 +12,8 @@ dec: Decimal,     Base 10
 hex: Hexadecimal, Base 16
 """
 
+# DEC TO BIN
+
 
 def ui_dec_to_ui_bin(n, bits=0):
     if n < 0:
@@ -31,6 +33,17 @@ def ui_dec_to_ui_bin(n, bits=0):
         return ('{:0>'+str(int(bits))+'}').format(b)
 
 
+def ti_dec_to_ti_bin(n):
+    return "UNIMPLEMENTED"
+
+
+def tf_dec_to_tf_bin(n):
+    return "UNIMPLEMENTED"
+
+
+# BIN TO DEC
+
+
 def ui_bin_to_ui_dec(n):
     if n.lstrip("-") != n:
         raise ValueError("Negative symbols are not supported in binary")
@@ -38,3 +51,55 @@ def ui_bin_to_ui_dec(n):
         d = int(n, 2)
 
     return d
+
+
+def ti_bin_to_ti_dec(n):
+    return "UNIMPLEMENTED"
+
+
+def tf_bin_to_tf_dec(n):
+    return "UNIMPLEMENTED"
+
+
+# DEC TO HEX
+
+
+def ui_dec_to_ui_hex(n):
+    return "UNIMPLEMENTED"
+
+
+def ti_dec_to_ti_hex(n):
+    return "UNIMPLEMENTED"
+
+
+def tf_dec_to_tf_hex(n):
+    return "UNIMPLEMENTED"
+
+
+# HEX TO DEC
+
+
+def ui_hex_to_ui_dec(n):
+    return "UNIMPLEMENTED"
+
+
+def ti_hex_to_ti_dec(n):
+    return "UNIMPLEMENTED"
+
+
+def tf_hex_to_tf_dec(n):
+    return "UNIMPLEMENTED"
+
+
+# BIN TO HEX
+
+
+def bin_to_hex(n):
+    return "UNIMPLEMENTED"
+
+
+# HEX TO BIN
+
+
+def hex_to_bin(n):
+    return "UNIMPLEMENTED"
