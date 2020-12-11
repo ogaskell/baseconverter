@@ -12,6 +12,8 @@ dec: Decimal,     Base 10
 hex: Hexadecimal, Base 16
 """
 
+import math
+
 # DEC TO BIN
 
 
@@ -97,13 +99,43 @@ def tf_hex_to_tf_dec(n):
 
 # BIN TO HEX
 
+hexnums = list("0123456789ABCDEF")
+binnums = ["0000",
+           "0001",
+           "0010",
+           "0011",
+           "0100",
+           "0101",
+           "0110",
+           "0111",
+           "1000",
+           "1001",
+           "1010",
+           "1011",
+           "1100",
+           "1101",
+           "1110",
+           "1111",
+           ]
+
 
 def bin_to_hex(n):
-    return "UNIMPLEMENTED"
+    b = ('{:0>' + str(math.ceil(len(n)/4)*4) + '}').format(n.replace(" ", ""))
+    splitb = [b[i:i+4] for i in range(0, len(b), 4)]
+
+    splith = list(map(lambda x: hexnums[binnums.index('{:0<4}'.format(x))], splitb))
+    h = "".join(splith)
+
+    return h
 
 
 # HEX TO BIN
 
 
 def hex_to_bin(n):
-    return "UNIMPLEMENTED"
+    h = list(n)
+
+    splitb = list(map(lambda x: binnums[hexnums.index(x)], h))
+    b = "".join(splitb)
+
+    return b
