@@ -23,6 +23,8 @@ def convert(request):
 
         outbase = request.POST.get('tbase', '')
 
+        error = ""
+
         try:
             signed = {"on": True, "": False}[request.POST.get('signed', '')]
         except KeyError:
@@ -41,6 +43,7 @@ def convert(request):
             error = "Input base and output base cannot be the same"
         else:
             if inbase == "bin":
+                print("OK")
                 if outbase == "dec":
                     if not signed and not floating:
                         result = bc.ui_bin_to_ui_dec(inputv)
@@ -51,12 +54,12 @@ def convert(request):
                     if not signed and floating:
                         result = "ERROR"
                         error = "Floating Binary must also be signed"
-                if outbase == "hex":
+                elif outbase == "hex":
                     result = bc.bin_to_hex(inputv)
                 else:
                     result = "ERROR"
-                    error = "Unknown error occured"
-            if inbase == "dec":
+                    error = "Unknown error 0 occured"
+            elif inbase == "dec":
                 if outbase == "bin":
                     if not signed and not floating:
                         result = bc.ui_dec_to_ui_bin(inputv)
@@ -67,7 +70,7 @@ def convert(request):
                     if not signed and floating:
                         result = "ERROR"
                         error = "Floating Binary must also be signed"
-                if outbase == "hex":
+                elif outbase == "hex":
                     if not signed and not floating:
                         result = bc.ui_dec_to_ui_hex(inputv)
                     if signed and not floating:
@@ -79,8 +82,8 @@ def convert(request):
                         error = "Floating hex must also be signed"
                 else:
                     result = "ERROR"
-                    error = "Unknown error occured"
-            if inbase == "hex":
+                    error = "Unknown error 1 occured"
+            elif inbase == "hex":
                 if outbase == "dec":
                     if not signed and not floating:
                         result = bc.ui_hex_to_ui_dec(inputv)
@@ -95,10 +98,10 @@ def convert(request):
                     result = bc.hex_to_bin(inputv)
                 else:
                     result = "ERROR"
-                    error = "Unknown error occured"
+                    error = "Unknown error 2 occured"
             else:
                 result = "ERROR"
-                error = "Unknown error occured"
+                error = "Unknown error 3 occured"
 
         return render(request, 'app/convert.html', {"input":      str(inputv),
                                                     "inbase":     bases[str(inbase)],
