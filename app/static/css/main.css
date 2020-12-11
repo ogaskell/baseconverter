@@ -39,6 +39,11 @@ body {
     width: auto;
 }
 
+.error {
+    color: #aa0000;
+    font-weight: bold;
+}
+
 .converter {
     display: grid;
     border: 1px solid black;

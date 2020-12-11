@@ -33,10 +33,17 @@ def convert(request):
         except KeyError:
             floating = False
 
+        if inputv == "":
+            result = "ERROR"
+            error = "Blank input value"
+        else:
+            result = 80
+
         return render(request, 'app/convert.html', {"input":      str(inputv),
                                                     "inbase":     bases[str(inbase)],
-                                                    "result":     "80",
+                                                    "result":     str(result),
                                                     "resultbase": bases[str(outbase)],
                                                     "floating":   str(floating),
                                                     "signed":     str(signed),
+                                                    "error":      error,
                                                     })
