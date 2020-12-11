@@ -48,6 +48,10 @@ body {
     grid-template: "sbasel tbasel" "sbase tbase" "signed floating" "hr hr" "inl in" ". subm";
 }
 
+input[type="checkbox"] {
+    float: right;
+}
+
 .sbasel {grid-area: sbasel;}
 .tbasel {grid-area: tbasel;}
 .sbase {grid-area: sbase;}
