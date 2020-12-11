@@ -36,8 +36,69 @@ def convert(request):
         if inputv == "":
             result = "ERROR"
             error = "Blank input value"
+        elif inbase == outbase:
+            result = "ERROR"
+            error = "Input base and output base cannot be the same"
         else:
-            result = 80
+            if inbase == "bin":
+                if outbase == "dec":
+                    if not signed and not floating:
+                        result = bc.ui_bin_to_ui_dec(inputv)
+                    if signed and not floating:
+                        result = bc.ti_bin_to_ti_dec(inputv)
+                    if signed and floating:
+                        result = bc.tf_bin_to_tf_dec(inputv)
+                    if not signed and floating:
+                        result = "ERROR"
+                        error = "Floating Binary must also be signed"
+                if outbase == "hex":
+                    result = bc.bin_to_hex(inputv)
+                else:
+                    result = "ERROR"
+                    error = "Unknown error occured"
+            if inbase == "dec":
+                if outbase == "bin":
+                    if not signed and not floating:
+                        result = bc.ui_dec_to_ui_bin(inputv)
+                    if signed and not floating:
+                        result = bc.ti_dec_to_ti_bin(inputv)
+                    if signed and floating:
+                        result = bc.tf_dec_to_tf_bin(inputv)
+                    if not signed and floating:
+                        result = "ERROR"
+                        error = "Floating Binary must also be signed"
+                if outbase == "hex":
+                    if not signed and not floating:
+                        result = bc.ui_dec_to_ui_hex(inputv)
+                    if signed and not floating:
+                        result = bc.ti_dec_to_ti_hex(inputv)
+                    if signed and floating:
+                        result = bc.tf_dec_to_tf_hex(inputv)
+                    if not signed and floating:
+                        result = "ERROR"
+                        error = "Floating hex must also be signed"
+                else:
+                    result = "ERROR"
+                    error = "Unknown error occured"
+            if inbase == "hex":
+                if outbase == "dec":
+                    if not signed and not floating:
+                        result = bc.ui_hex_to_ui_dec(inputv)
+                    if signed and not floating:
+                        result = bc.ti_hex_to_ti_dec(inputv)
+                    if signed and floating:
+                        result = bc.tf_hex_to_tf_dec(inputv)
+                    if not signed and floating:
+                        result = "ERROR"
+                        error = "Floating hex must also be signed"
+                if outbase == "bin":
+                    result = bc.hex_to_bin(inputv)
+                else:
+                    result = "ERROR"
+                    error = "Unknown error occured"
+            else:
+                result = "ERROR"
+                error = "Unknown error occured"
 
         return render(request, 'app/convert.html', {"input":      str(inputv),
                                                     "inbase":     bases[str(inbase)],
