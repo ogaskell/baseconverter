@@ -23,8 +23,15 @@ def convert(request):
 
         outbase = request.POST.get('tbase', '')
 
-        signed = request.POST.get('signed', '')
-        floating = request.POST.get('floating')
+        try:
+            signed = {"on": True, "": False}[request.POST.get('signed', '')]
+        except KeyError:
+            signed = False
+
+        try:
+            floating = {"on": True, "": False}[request.POST.get('floating')]
+        except KeyError:
+            floating = False
 
         return render(request, 'app/convert.html', {"input":      str(inputv),
                                                     "inbase":     bases[str(inbase)],
