@@ -39,6 +39,12 @@ body {
     width: auto;
 }
 
+h4 a, h4 a:visited {
+    color: #aaffff;
+    text-decoration: none;
+    width: 0;
+}
+
 .error {
     color: #aa0000;
     font-weight: bold;
