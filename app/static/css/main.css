@@ -45,13 +45,15 @@ body {
     width: max-content;
     grid-gap: 10px;
     padding: 10px;
-    grid-template: "sbasel tbasel" "sbase tbase" "hr hr" "inl in" ". subm";
+    grid-template: "sbasel tbasel" "sbase tbase" "signed floating" "hr hr" "inl in" ". subm";
 }
 
 .sbasel {grid-area: sbasel;}
 .tbasel {grid-area: tbasel;}
 .sbase {grid-area: sbase;}
 .tbase {grid-area: tbase;}
+.signed {grid-area: signed;}
+.floating {grid-area: floating;}
 .inl {grid-area: inl;}
 .in {grid-area: in;}
 .subm {grid-area: subm;}
