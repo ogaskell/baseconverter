@@ -24,7 +24,7 @@ def convert(request):
         return redirect("index")
     elif request.method == "POST":
         inbase = request.POST.get('sbase', '')
-        inputv = request.POST.get('in', '')
+        inputv = request.POST.get('in', '').upper()
 
         outbase = request.POST.get('tbase', '')
 
